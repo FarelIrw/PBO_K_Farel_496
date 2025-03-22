@@ -1,7 +1,7 @@
 package Tugas;
 import java.util.Scanner;
 
-public class Tugas1 {
+public class LoginSystem {
    public static void main (String[] args) {// Function main atau utama
         Scanner scanner = new Scanner(System.in);
 

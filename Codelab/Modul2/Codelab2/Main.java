@@ -5,10 +5,11 @@ public class Main {
         RekeningBank rekening1 = new RekeningBank();
         RekeningBank rekening2 = new RekeningBank();
 
-        rekening1.nomorRekening = "202410370110496";
-        rekening1.namaPemilik   = "Farel Bayuputra Irawan";
-        rekening1.saldo         = 1000000.0;
-
+        const rekening1 = {
+            nomorRekening : 202410370110496;
+            rekening1.namaPemilik = "Farel Bayuputra Irawan";
+            rekening1.saldo = 1000000.0;
+        }
         rekening2.nomorRekening = "202410370110501";
         rekening2.namaPemilik   = "Aldhitofa";
         rekening2.saldo         = 500000.0;
