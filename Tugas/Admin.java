@@ -2,22 +2,23 @@ package Tugas;
 
 import java.util.Scanner;
 
-public class Mahasiswa {
-    private String nameMahasiswa = "Farel Bayuputra Irawan"; // Nama default
-    private String nimMahasiswa = "202410370110496"; // NIM default
+public class Admin {
+    private String usernameAdmin = "Admin496";
+    private String passwordAdmin = "Password496";
 
     public void login() {
         Scanner scanner = new Scanner(System.in);
         int attempts = 3; // Maksimal percobaan login
 
         while (attempts > 0) {
-            System.out.print("Masukkan nama: ");
-            String CheckinputNama = scanner.nextLine();
+            System.out.print("Masukkan Username: ");
+            String inputUsername = scanner.nextLine();
 
-            System.out.print("Masukkan NIM: ");
-            String CheckinputNim = scanner.nextLine();
+            System.out.print("Masukkan Password: ");
+            String inputPassword = scanner.nextLine();
 
-            if (CheckinputNama.equals(nameMahasiswa) && CheckinputNim.equals(nimMahasiswa)) {
+            //validasi username dan password
+            if (inputUsername.equals(usernameAdmin) && inputPassword.equals(passwordAdmin)) {
                 System.out.println("Login Berhasil!");
                 break;
             } else {
