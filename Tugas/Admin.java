@@ -2,33 +2,45 @@ package Tugas;
 
 import java.util.Scanner;
 
-public class Admin {
-    private String usernameAdmin = "Admin496";
-    private String passwordAdmin = "Password496";
+public class Admin extends User {
+    private String username;
+    private String password;
 
+    public Admin(String nama, String nim, String username, String password) {
+        super(nama, nim);
+        this.username = username;
+        this.password = password;
+    }
+
+    @Override
     public void login() {
         Scanner scanner = new Scanner(System.in);
-        int attempts = 3; // Maksimal percobaan login
+        int attempts = 3;
 
         while (attempts > 0) {
             System.out.print("Masukkan Username: ");
-            String inputUsername = scanner.nextLine();
+            String inputUser = scanner.nextLine();
 
             System.out.print("Masukkan Password: ");
-            String inputPassword = scanner.nextLine();
+            String inputPass = scanner.nextLine();
 
-            //validasi username dan password
-            if (inputUsername.equals(usernameAdmin) && inputPassword.equals(passwordAdmin)) {
-                System.out.println("Login Berhasil!");
+            if (inputUser.equals(username) && inputPass.equals(password)) {
+                displayInfo();
                 break;
             } else {
-                attempts--; //mengurangi jumlah percobaan login setiap kali login gagal.
+                attempts--;
                 if (attempts > 0) {
                     System.out.println("Login Gagal! Sisa percobaan: " + attempts);
                 } else {
-                    System.out.println("Akses ditolak! Anda telah mencoba 3 kali.");
+                    System.out.println("Akses ditolak! Kamu telah mencoba 3 kali.");
                 }
             }
         }
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("\n=== LOGIN BERHASIL SEBAGAI ADMIN ===");
+        System.out.println("Selamat datang, " + getNama());
     }
 }

@@ -5,27 +5,28 @@ import java.util.Scanner;
 public class LoginSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Admin admin = new Admin("Admin Utama", "0001", "Admin496", "Password496");
+        Mahasiswa mahasiswa = new Mahasiswa("Farel Bayuputra Irawan", "202410370110496");
 
         while (true) {
-            System.out.println("Pilih login yang akan dipilih:");
-            System.out.println("1. Admin");
-            System.out.println("2. Mahasiswa");
+            System.out.println("\n==============================");
+            System.out.println("   SELAMAT DATANG DI SISTEM   ");
+            System.out.println("==============================");
+            System.out.println("1. Login sebagai Admin");
+            System.out.println("2. Login sebagai Mahasiswa");
+            System.out.print("Pilih (1/2): ");
 
-            System.out.print("Masukkan pilihan (1 atau 2): ");
-            int option = scanner.nextInt();
-            scanner.nextLine(); // Konsumsi newline setelah nextInt
+            int pilihan = scanner.nextInt();
+            scanner.nextLine(); // flush newline
 
-            if (option == 1) {
-                Admin admin = new Admin();
+            if (pilihan == 1) {
                 admin.login();
-                break; // Keluar setelah login berhasil
-            } else if (option == 2) {
-                Mahasiswa mahasiswa = new Mahasiswa();
-                mahasiswa.login();
-                break; // Keluar setelah login berhasil
-            } else {
-                System.out.println("Pilihan tidak Valid! Silakan pilih 1 atau 2.");
                 break;
+            } else if (pilihan == 2) {
+                mahasiswa.login();
+                break;
+            } else {
+                System.out.println("Pilihan tidak valid! Silakan pilih 1 atau 2.\n");
             }
         }
     }

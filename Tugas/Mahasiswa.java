@@ -2,32 +2,43 @@ package Tugas;
 
 import java.util.Scanner;
 
-public class Mahasiswa {
-    private String nameMahasiswa = "Farel Bayuputra Irawan"; // Nama default
-    private String nimMahasiswa = "202410370110496"; // NIM default
+public class Mahasiswa extends User {
 
+    public Mahasiswa(String nama, String nim) {
+        super(nama, nim);
+    }
+
+    @Override
     public void login() {
         Scanner scanner = new Scanner(System.in);
-        int attempts = 3; // Maksimal percobaan login
+        int attempts = 3;
 
         while (attempts > 0) {
-            System.out.print("Masukkan nama: ");
-            String CheckinputNama = scanner.nextLine();
+            System.out.print("Masukkan Nama: ");
+            String inputNama = scanner.nextLine();
 
             System.out.print("Masukkan NIM: ");
-            String CheckinputNim = scanner.nextLine();
+            String inputNim = scanner.nextLine();
 
-            if (CheckinputNama.equals(nameMahasiswa) && CheckinputNim.equals(nimMahasiswa)) {
-                System.out.println("Login Berhasil!");
+            if (inputNama.equals(getNama()) && inputNim.equals(getNim())) {
+                displayInfo();
                 break;
             } else {
-                attempts--; //mengurangi jumlah percobaan login setiap kali login gagal.
+                attempts--;
                 if (attempts > 0) {
                     System.out.println("Login Gagal! Sisa percobaan: " + attempts);
                 } else {
-                    System.out.println("Akses ditolak! Anda telah mencoba 3 kali.");
+                    System.out.println("Akses ditolak! Kamu telah mencoba 3 kali.");
                 }
             }
         }
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("\n=== LOGIN BERHASIL SEBAGAI MAHASISWA ===");
+        System.out.println("HALO SELAMAT DATANG KEMBALI!!!");
+        System.out.println("Nama : " + getNama());
+        System.out.println("NIM  : " + getNim());
     }
 }
