@@ -1,6 +1,6 @@
-package Tugas;
+package Tugas.com.praktikum.user;
 
-public class User {
+public abstract class User {
     private String nama;
     private String nim;
 
@@ -26,9 +26,9 @@ public class User {
         this.nim = nim;
     }
 
-    public void login() {
-        // Akan dioverride
-    }
+    public abstract void login();
+
+    public abstract void displayAppMenu();
 
     public void displayInfo() {
         // Akan dioverride

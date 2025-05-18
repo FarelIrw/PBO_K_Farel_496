@@ -1,5 +1,8 @@
 package Tugas;
 
+import Tugas.com.praktikum.user.Admin;
+import Tugas.com.praktikum.user.Mahasiswa;
+
 import java.util.Scanner;
 
 public class LoginSystem {
