@@ -4,6 +4,7 @@ public abstract class User {
     private String nama;
     private String nim;
 
+
     public User(String nama, String nim) {
         this.nama = nama;
         this.nim = nim;
@@ -32,6 +33,5 @@ public abstract class User {
     public void displayInfo() {
         // Akan dioverride
     }
-
 
 }
